@@ -458,7 +458,7 @@ plot_all_losses = function(model_hist_list, sigma2_h_list, global_title) {
 }
 
 plot_all_losses(nn_encoder_history_list, sigma2_h_list, 
-              "Training and Validation Losses of Neural Networks \nfor the Fixed-effects Part of Mixed VAE Models")
+                "Training and Validation Losses of Neural Networks \nfor the Fixed-effects Part of Mixed-effects VAE Models")
 
 # ===============================
 # Extracting fixed-effects estimates from the trained keras models in mixed-effects VAE
@@ -879,7 +879,7 @@ plot_all_accuracies = function(model_hist_list, sigma2_h_list, global_title) {
 
 # Plotting training and validation accuracies of all classification models
 plot_all_accuracies(classifier_nn_hist_list, sigma2_h_list, 
-                    "Training and Validation Accuracy of Neural Network Classification Models for Drivers' States")
+                    "Training and Validation Accuracy Scores of Neural Network Classification Models for Drivers' States")
 
 # Accuracy on test data into a LaTeX tablepaper
 test_accu_df = data.frame(bind_rows(test_accu_list, # sigma2_h = 0.3 the best
