@@ -888,12 +888,13 @@ test_accu_df = data.frame(bind_rows(test_accu_list, # sigma2_h = 0.3 the best
 rownames(test_accu_df) = c("Overall", "Known subjects", "Unknown subjects")
 saveRDS(test_accu_df, "classification_accuracies.rds")
 
+test_accu_df = readRDS("mrleye_classification/classification_accuracies.rds")
+test_accu_df = subset(test_accu_df, select = -Baseline)
+
 kable(test_accu_df, "latex", digits = 4, 
       caption = "Accuracy score of feed-forward neural network in classifying driver's state, 
       with the inputs being latent variables encoded by mixed VAE models with different values of sigma^2_h", 
       label = "binary_test_accuracy")
-
-# readRDS("nn_classifier_training_hist.rds")
 
 # Getting random-effects estimates of MVAE model with sigma2_h = 0.3
 best_brm_fit = readRDS("mvae_raneff/brm_raneff_sigma2h_0.3.rds")
