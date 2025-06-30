@@ -886,7 +886,7 @@ test_accu_df = data.frame(bind_rows(test_accu_list, # sigma2_h = 0.3 the best
                                     test_sub_known_accu_list, # sigma2_h = 0.3 the best
                                     test_sub_unknown_accu_list)) # sigma2_h = 0 the best
 rownames(test_accu_df) = c("Overall", "Known subjects", "Unknown subjects")
-saveRDS(test_accu_df, "classification_accuracies.rds")
+# saveRDS(test_accu_df, "mrleye_classification/classification_accuracies.rds")
 
 test_accu_df = readRDS("mrleye_classification/classification_accuracies.rds")
 test_accu_df = subset(test_accu_df, select = -Baseline)

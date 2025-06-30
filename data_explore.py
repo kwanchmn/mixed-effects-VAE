@@ -108,7 +108,6 @@ def resize_image(data, file_list, org_path, dest_path,
 """
 Exploratory Data Analysis
 """
-
 # 1. How many images per subject?
 train_df["subject"].value_counts()
 val_df["subject"].value_counts(normalize=True)
@@ -124,13 +123,6 @@ test_df.groupby(["subject", "state"])["subject"].value_counts()
 """
 Saving metadata files as csv
 """
-
 # train_df.to_csv("metadata/train_img_metadata.csv")
 # val_df.to_csv("metadata/val_img_metadata.csv")
 # test_df.to_csv("metadata/test_img_metadata.csv")
-
-""" 
-Getting a subset of training data 
-"""
-np.random.seed(123)
-train_samp_idx = train_df.groupby("subject").sample(n = 100)
